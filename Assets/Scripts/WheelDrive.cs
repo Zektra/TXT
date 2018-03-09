@@ -11,6 +11,9 @@ public enum DriveType
 
 public class WheelDrive : MonoBehaviour
 {
+        Speed _Speed;
+        AudioSource audioSource;
+
     [Tooltip("Maximum steering angle of the wheels")]
 	public float maxAngle = 30f;
 	[Tooltip("Maximum torque applied to the driving wheels")]
@@ -35,6 +38,9 @@ public class WheelDrive : MonoBehaviour
     // Find all the WheelColliders down in the hierarchy.
 	void Start()
 	{
+                audioSource = GetComponent<AudioSource>();
+                _Speed = GameObject.FindObjectOfType(typeof(Speed)) as Speed;
+
 		m_Wheels = GetComponentsInChildren<WheelCollider>();
 
 		for (int i = 0; i < m_Wheels.Length; ++i) 
@@ -96,5 +102,10 @@ public class WheelDrive : MonoBehaviour
 				shapeTransform.rotation = q;
 			}
 		}
+                engineSound(torque);
 	}
+        void engineSound(float torque)
+        {
+            audioSource.pitch = 0.5F + (torque / maxTorque) * _Speed.speed;
+        }
 }
