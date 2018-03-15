@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnRoad : MonoBehaviour {
 
+	bool isHit = false;
+
         public Level _Level;
 
         void Start()
@@ -13,6 +15,10 @@ public class SpawnRoad : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
         {
-             _Level.CreatePrefab();
+            if(!isHit)
+            {
+                _Level.CreatePrefab();
+                isHit = true;
+            }
         }
 }

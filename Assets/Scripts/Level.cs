@@ -20,7 +20,7 @@ public bool DestroyerMove = false;
     public void CreatePrefab()
     {
         GameObject clone = Instantiate(_myPrefabs[RandomNumber()]) as GameObject;
-        clone.transform.position = new Vector3(100 * roadCount, 0, 0);
+        clone.transform.position = new Vector3(60 * roadCount, 0, 0);
         roadCount++;
         DestroyerMove = true;
     }

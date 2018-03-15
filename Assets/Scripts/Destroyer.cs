@@ -15,7 +15,7 @@ public class Destroyer : MonoBehaviour {
         {
             if(_Level.DestroyerMove)
             {
-                transform.Translate(100, 0, 0);
+                transform.Translate(60, 0, 0);
                 _Level.DestroyerMove = false;
             }
         }
