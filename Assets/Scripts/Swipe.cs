@@ -5,14 +5,15 @@ using UnityEngine;
 public class Swipe : MonoBehaviour {
 
          
-        float start;
-        float end;
-        float nextActionTime;
+        float start, end, nextActionTime;
         Renderer rend;
+        int swipeDirection;
+        public Texture CallScreen, CallScreen2, ScreenOff;
 	// Use this for initialization
 	void Start ()
         {
             resetSwipe();
+            nextActionTime = Time.time + 30;
             rend = GetComponent<Renderer>();
             rend.material.shader = Shader.Find("Specular");
 	}
@@ -22,12 +23,20 @@ public class Swipe : MonoBehaviour {
         {
             if (Time.time >= nextActionTime)
             {
-                rend.material.SetColor("_SpecColor", Color.red);
-                ListenSwipe();
+                if(swipeDirection > 50)
+                {
+                    rend.material.SetTexture("_MainTex", CallScreen);
+                    ListenSwipeRight();
+                }
+                else
+                {
+                    rend.material.SetTexture("_MainTex", CallScreen2);
+                    ListenSwipeLeft();
+                }
             }
 	}
 
-        void ListenSwipe()
+        void ListenSwipeRight()
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -39,7 +48,24 @@ public class Swipe : MonoBehaviour {
             }
             if (end - start > 0 && start != 0 && end != 0)
             {
-                rend.material.SetColor("_SpecColor", Color.black);
+                rend.material.SetTexture("_MainTex", ScreenOff);
+                resetSwipe();
+            }
+         }
+
+        void ListenSwipeLeft()
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                start = Input.mousePosition.x;
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                end = Input.mousePosition.x;
+            }
+            if (end - start < 0 && start != 0 && end != 0)
+            {
+                rend.material.SetTexture("_MainTex", ScreenOff);
                 resetSwipe();
             }
          }
@@ -49,5 +75,11 @@ public class Swipe : MonoBehaviour {
             start = 0;
             end = 0;
             nextActionTime = Time.time + Random.Range(1, 5);
+            setSwipeDirection();
+        }
+
+        void setSwipeDirection()
+        {
+            swipeDirection = Random.Range(1, 100);
         }
 }
