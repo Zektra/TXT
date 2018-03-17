@@ -26,17 +26,25 @@ public class Swipe : MonoBehaviour {
                 if(swipeDirection > 50)
                 {
                     rend.material.SetTexture("_MainTex", CallScreen);
-                    ListenSwipeRight();
+                    if (ListenSwipe() == "right")
+                    {
+                        rend.material.SetTexture("_MainTex", ScreenOff);
+                        resetSwipe();
+                    }
                 }
                 else
                 {
                     rend.material.SetTexture("_MainTex", CallScreen2);
-                    ListenSwipeLeft();
+                    if (ListenSwipe() == "left")
+                    {
+                        rend.material.SetTexture("_MainTex", ScreenOff);
+                        resetSwipe();
+                    }
                 }
             }
 	}
 
-        void ListenSwipeRight()
+        string ListenSwipe()
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -48,26 +56,13 @@ public class Swipe : MonoBehaviour {
             }
             if (end - start > 0 && start != 0 && end != 0)
             {
-                rend.material.SetTexture("_MainTex", ScreenOff);
-                resetSwipe();
-            }
-         }
-
-        void ListenSwipeLeft()
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                start = Input.mousePosition.x;
-            }
-            if (Input.GetButtonUp("Fire1"))
-            {
-                end = Input.mousePosition.x;
+                return "right";
             }
             if (end - start < 0 && start != 0 && end != 0)
             {
-                rend.material.SetTexture("_MainTex", ScreenOff);
-                resetSwipe();
+                 return "left";
             }
+            return "none";
          }
 
         void resetSwipe()
