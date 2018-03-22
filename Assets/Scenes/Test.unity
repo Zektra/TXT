@@ -1658,6 +1658,7 @@ MonoBehaviour:
   - {fileID: 1046715564265510, guid: 45bf426a91df0440a973057158cb1302, type: 2}
   - {fileID: 1417118466603560, guid: 17f96dd141bbe4ec1932e8218dee6d1d, type: 2}
   - {fileID: 1160808496259014, guid: 508410986ceee496a941ffda280bb24b, type: 2}
+  - {fileID: 1566223919998956, guid: a6f90dc3d2b0d024599fd8dd93b3dcec, type: 2}
   _myCars:
   - {fileID: 891080620}
   - {fileID: 1000013318341794, guid: 53c496fec7e88b444858ad01c2739816, type: 2}
@@ -1673,7 +1674,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 891080620}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.307176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1586164338}
@@ -1817,6 +1818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   speedOld: 0
+  nextActionTime: 0
 --- !u!114 &891080623
 MonoBehaviour:
   m_ObjectHideFlags: 0
