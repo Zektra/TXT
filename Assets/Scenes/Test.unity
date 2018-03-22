@@ -1658,7 +1658,8 @@ MonoBehaviour:
   - {fileID: 1046715564265510, guid: 45bf426a91df0440a973057158cb1302, type: 2}
   - {fileID: 1417118466603560, guid: 17f96dd141bbe4ec1932e8218dee6d1d, type: 2}
   - {fileID: 1160808496259014, guid: 508410986ceee496a941ffda280bb24b, type: 2}
-  - {fileID: 1566223919998956, guid: a6f90dc3d2b0d024599fd8dd93b3dcec, type: 2}
+  - {fileID: 1207332479568980, guid: d966c8f2b8561a749925663bce08031b, type: 2}
+  - {fileID: 1613677965250150, guid: bb754c7dc93c7404d9ce06201af5db70, type: 2}
   _myCars:
   - {fileID: 891080620}
   - {fileID: 1000013318341794, guid: 53c496fec7e88b444858ad01c2739816, type: 2}
@@ -1721,7 +1722,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4a45ca97540bd4361bdfe2e2072d6b56, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
