@@ -9,7 +9,7 @@ public class Swipe : MonoBehaviour {
         Renderer rend;
         int swipeDirection;
         public Texture CallScreen, CallScreen2, ScreenOff;
-        bool wrongDirection;
+        bool wrongDirection, mouseDown;
 	// Use this for initialization
 	void Start ()
         {
@@ -63,19 +63,20 @@ public class Swipe : MonoBehaviour {
 
         string ListenSwipe()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && mouseDown != true)
             {
                 start = Input.mousePosition.x;
             }
             if (Input.GetButtonUp("Fire1"))
             {
                 end = Input.mousePosition.x;
+                mouseDown = false;
             }
-            if (end - start > 0 && start != 0 && end != 0)
+            if (end > start && start != 0 && end != 0)
             {
                 return "right";
             }
-            if (end - start < 0 && start != 0 && end != 0)
+            if (end < start && start != 0 && end != 0)
             {
                  return "left";
             }
