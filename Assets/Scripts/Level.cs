@@ -5,6 +5,7 @@ using UnityEngine;
 public class Level : MonoBehaviour {
 
 public GameObject[] _myPrefabs;
+public GameObject[] _myCars;
 public int renderDistance;
 public int roadCount = 0;
 public bool DestroyerMove = false;
