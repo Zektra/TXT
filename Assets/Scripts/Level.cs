@@ -5,13 +5,13 @@ using UnityEngine;
 public class Level : MonoBehaviour {
 
 public GameObject[] _myPrefabs;
-public GameObject[] _myCars;
 public int renderDistance;
 public int roadCount = 0;
 public bool DestroyerMove = false;
 
     void Start()
     {
+        nextActionTime = Time.time + 15;
         for(int i = 0; i < renderDistance; i++)
         {
             CreatePrefab();
@@ -20,8 +20,16 @@ public bool DestroyerMove = false;
 
     public void CreatePrefab()
     {
-        GameObject clone = Instantiate(_myPrefabs[RandomNumber()]) as GameObject;
-        clone.transform.position = new Vector3(60 * roadCount, 0, 0);
+        if(roadCount < 3)
+        {
+            GameObject clone = Instantiate(_myPrefabs[0]) as GameObject;
+            clone.transform.position = new Vector3(60 * roadCount, 0, 0);
+        }
+        else
+        {
+            GameObject clone = Instantiate(_myPrefabs[RandomNumber()]) as GameObject;
+            clone.transform.position = new Vector3(60 * roadCount, 0, 0);
+        }
         roadCount++;
         DestroyerMove = true;
     }

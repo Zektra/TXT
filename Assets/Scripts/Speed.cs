@@ -23,7 +23,7 @@ public class Speed : MonoBehaviour
         {
             speedOld = speed;
         }
-        if(speedOld - 0.05 > speed)
+        if(speedOld - 0.09 > speed)
         {
             Application.LoadLevel("GameOver");
         }
