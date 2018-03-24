@@ -11,7 +11,6 @@ public bool DestroyerMove = false;
 
     void Start()
     {
-        nextActionTime = Time.time + 15;
         for(int i = 0; i < renderDistance; i++)
         {
             CreatePrefab();
