@@ -345,11 +345,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.315
   m_SuspensionSpring:
-    spring: 40784.805
-    damper: 6525.569
+    spring: 40784.824
+    damper: 6525.5723
     targetPosition: 0.5
   m_SuspensionDistance: 0.19620001
-  m_ForceAppPointDistance: 0.67899007
+  m_ForceAppPointDistance: 0.6789834
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 344129845}
   - component: {fileID: 344129844}
   - component: {fileID: 344129847}
+  - component: {fileID: 344129848}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -734,9 +735,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c406fefd7c1a46cf829abce26846a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 344129848}
   CallScreen: {fileID: 2800000, guid: ecc2db34a092a4329a7c705a1b6cf826, type: 3}
   CallScreen2: {fileID: 2800000, guid: e57fa313a3ce94d74bda560d76c3ba04, type: 3}
   ScreenOff: {fileID: 2800000, guid: 8d8696dd3b995434b8b11160da048a84, type: 3}
+  ringtone: {fileID: 8300000, guid: b1965e7a3e597425f9d4ff875ed2c5da, type: 3}
+--- !u!82 &344129848
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344129842}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1965e7a3e597425f9d4ff875ed2c5da, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &351917523
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,9 +971,9 @@ RectTransform:
   m_Father: {fileID: 1590973782}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -335, y: 130}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 83, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395722071
@@ -929,6 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countText: {fileID: 395722071}
+  Car: {fileID: 891080620}
 --- !u!1 &428628989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,11 +1628,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.315
   m_SuspensionSpring:
-    spring: 35031.027
-    damper: 5604.9644
+    spring: 35030.88
+    damper: 5604.941
     targetPosition: 0.5
   m_SuspensionDistance: 0.19620001
-  m_ForceAppPointDistance: 0.67899007
+  m_ForceAppPointDistance: 0.6789834
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1833,6 +1932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ed7128051760b42bc56c15e5a6657d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
   maxAngle: 30
   maxTorque: 100
   brakeTorque: 30000
@@ -1993,6 +2093,88 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039563547}
   m_Mesh: {fileID: 4300066, guid: bcebbff63ead74370b35f531edfdd398, type: 3}
+--- !u!1 &1078587254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1078587255}
+  - component: {fileID: 1078587257}
+  - component: {fileID: 1078587256}
+  m_Layer: 5
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1078587255
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078587254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590973782}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 82.99982, y: 55}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1078587256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078587254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 11
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'W = look up
+
+    D = look down
+
+    A = move left
+
+    D = move right
+
+    mouse = swipe'
+--- !u!222 &1078587257
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078587254}
 --- !u!1 &1140207862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,11 +2485,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.315
   m_SuspensionSpring:
-    spring: 34215.19
-    damper: 5474.431
+    spring: 34215.17
+    damper: 5474.4272
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620003
-  m_ForceAppPointDistance: 0.67899007
+  m_SuspensionDistance: 0.19620001
+  m_ForceAppPointDistance: 0.6789834
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -3260,6 +3442,8 @@ GameObject:
   - component: {fileID: 1586164337}
   - component: {fileID: 1586164336}
   - component: {fileID: 1586164335}
+  - component: {fileID: 1586164339}
+  - component: {fileID: 1586164340}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3330,6 +3514,36 @@ Transform:
   m_Father: {fileID: 891080619}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+--- !u!95 &1586164339
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586164334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d885bf25725f5431e89196e5aa56d119, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1586164340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586164334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797a1ab80ea964242ae4dca15655a3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &1590973778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,6 +3630,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 395722070}
+  - {fileID: 1078587255}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3836,11 +4051,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.315
   m_SuspensionSpring:
-    spring: 39968.97
-    damper: 6395.035
+    spring: 39969.12
+    damper: 6395.0596
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620003
-  m_ForceAppPointDistance: 0.67899007
+  m_SuspensionDistance: 0.1962
+  m_ForceAppPointDistance: 0.6789834
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -4906,6 +5121,34 @@ Prefab:
     - target: {fileID: 400004, guid: badac3697080e4db7980450b26aeffa0, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.23048885
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7116084
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00206437
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6636898
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -17.992
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 97.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: badac3697080e4db7980450b26aeffa0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: badac3697080e4db7980450b26aeffa0, type: 3}

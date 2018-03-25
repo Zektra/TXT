@@ -11,6 +11,7 @@ public enum DriveType
 
 public class WheelDrive : MonoBehaviour
 {
+        public float angle;
         Speed _Speed;
         AudioSource audioSource;
 
@@ -63,7 +64,7 @@ public class WheelDrive : MonoBehaviour
 	{
 		m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
 
-		float angle = maxAngle * Input.GetAxis("Horizontal");
+		angle = maxAngle * Input.GetAxis("Horizontal");
 		float torque = maxTorque;
 
 		float handBrake = Input.GetKey(KeyCode.X) ? brakeTorque : 0;

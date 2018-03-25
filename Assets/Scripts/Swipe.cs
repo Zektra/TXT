@@ -7,9 +7,11 @@ public class Swipe : MonoBehaviour {
         Score score;
         float start, end, nextActionTime;
         Renderer rend;
+        public AudioSource audio;
         int swipeDirection;
         public Texture CallScreen, CallScreen2, ScreenOff;
         bool wrongDirection, mouseDown;
+        public AudioClip ringtone;
 	// Use this for initialization
 	void Start ()
         {
@@ -26,6 +28,11 @@ public class Swipe : MonoBehaviour {
         {
             if (Time.time >= nextActionTime)
             {
+                if(!audio.isPlaying)
+                {
+                    audio.clip = ringtone;
+                    audio.Play();
+                }
                 if(swipeDirection > 50)
                 {
                     rend.material.SetTexture("_MainTex", CallScreen);
@@ -87,8 +94,12 @@ public class Swipe : MonoBehaviour {
         {
             start = 0;
             end = 0;
-            nextActionTime = Time.time + Random.Range(1, 5);
+            nextActionTime = Time.time + Random.Range(5, 10);
             setSwipeDirection();
+            if(audio.isPlaying)
+            {
+                audio.Stop();
+            }
         }
 
         void setSwipeDirection()
